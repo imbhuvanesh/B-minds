@@ -30,7 +30,7 @@ body {
 
 .bold-heading {
   font-size: 2em;
-   font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 
   align-items: center;
   text-transform: uppercase;
@@ -73,6 +73,12 @@ body {
 
 .movie-container:hover {
   transform: translateY(-5px);
+}
+
+/* New style for newly added movie container */
+.movie-container.newly-added {
+  background-color: #baffc9; /* Light green */
+  transition: background-color 0.5s ease;
 }
 
 .toggle-review-btn, .review-btn {

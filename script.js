@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Load movies from backend and render on page
-  async function loadMovies() {
+  async function loadMovies(highlightLatest = false) {
     // Clear movies list but keep Add Movie button
     moviesList.innerHTML = `<button id="showAddMovieForm" class="bold-heading">Add Movie</button>`;
 
@@ -47,9 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch("http://localhost:3000/movies");
       const movies = await res.json();
 
-      movies.forEach(movie => {
+      movies.forEach((movie, index) => {
         const movieDiv = document.createElement("div");
         movieDiv.classList.add("movie-container");
+
+        // Highlight newly added movie container
+        if (highlightLatest && index === movies.length - 1) {
+          movieDiv.classList.add("newly-added");
+        }
+
         movieDiv.innerHTML = `
           <h2>${movie.title}</h2>
           <p>${movie.description}</p>
@@ -148,8 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify({ title, description })
       });
 
-      // Reload movies to show new one
-      loadMovies();
+      // Reload movies and highlight the newly added movie
+      loadMovies(true);
 
       // Reset form and hide add movie section
       document.getElementById("movieTitle").value = "";
