@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reload movies and highlight the newly added movie
       loadMovies(true);
 
+
       // Reset form and hide add movie section
       document.getElementById("movieTitle").value = "";
       document.getElementById("movieDescription").value = "";
