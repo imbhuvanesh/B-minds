@@ -10,8 +10,9 @@ body {
   background-image:
     linear-gradient(to right, rgb(0, 0, 0) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent 1px);
+
   background-size: 60px 60px;
-  animation: moveGrid 10s linear infinite;
+  animation: moveGrid 10s linear infinite, zoomGrid 6s ease-in-out infinite;
 
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
@@ -27,6 +28,8 @@ body {
   0% { background-position: 0 0; }
   100% { background-position: 60px 60px; }
 }
+
+
 
 .bold-heading {
   font-size: 2em;

@@ -1,3 +1,6 @@
+
+
+
 // Cursor follower animation
 const cursor = document.getElementById("cursorFollower");
 let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
