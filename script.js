@@ -169,4 +169,5 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Failed to add movie:", err);
     }
   });
+  
 });

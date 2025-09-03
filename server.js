@@ -77,6 +77,7 @@ app.get('/reviews/:movieId', (req, res) => {
 });
 
 // Start the server
+
 app.listen(port, () => {
   console.log(` Movies Community server running at http://localhost:${port}`);
 });
