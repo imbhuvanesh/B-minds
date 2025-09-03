@@ -62,7 +62,7 @@ app.post('/reviews', (req, res) => {
     }
     res.send({ success: true });
   });
-});
+});  
 
 // Get reviews for a movie
 app.get('/reviews/:movieId', (req, res) => {
