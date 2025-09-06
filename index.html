@@ -2,48 +2,57 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>B-realm</title>
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- JavaScript -->
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main>
-    <!-- Heading -->
+  <div id="bootLoader">
+    <div class="loader-text">
+      <span id="typewriterText"></span><span class="cursor">|</span>
+    </div>
+  </div>
+  <main class="content-hidden">
     <div class="heading-container">
       <button id="revealButton" class="bold-heading">B-minds</button>
     </div>
-
-    <!-- Movies & Add Form Row -->
+    <div class="instructions-container">
+        <div class="instruction-box primary-bg">
+            <p>Click "B-minds" to reveal the movie list and begin exploring!</p>
+        </div>
+        <div class="instruction-box secondary-bg">
+            <p>Use "Add Movie" to create a new movie entry in the list.</p>
+        </div>
+        <div class="instruction-box tertiary-bg">
+            <p>Click "Review" on any movie to submit and view reviews.</p>
+        </div>
+    </div>
+    <div class="about-container">
+        <h2>About B-minds</h2>
+        <p>Welcome to B-minds, your community hub for all things cinema. We believe that movies are more than just entertainment; they're a shared experience. Here, you can discover new films, share your thoughts, and connect with fellow movie enthusiasts. Our platform is a space for honest reviews and open discussion. We can't wait to see what you're watching!</p>
+    </div>
     <section id="moviesSection" class="container-row hidden">
-
-      <!-- Left: Movies List -->
       <div class="movies-list" id="moviesList">
         <button id="showAddMovieForm" class="bold-heading">Add Movie</button>
-        <!-- Movies will be dynamically loaded here -->
       </div>
-    
-      <!-- Right: Add Movie Form -->
       <section id="addMovieSection" class="add-movie-container hidden">
         <h2>Add a New Movie</h2>
         <input type="text" id="movieTitle" placeholder="Movie Title" />
         <textarea id="movieDescription" placeholder="Movie Description"></textarea>
+        <select id="movieGenre">
+          <option value="">Select Genre</option>
+          <option value="love">Love</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="horror">Horror</option>
+        </select>
         <button id="addMovieBtn">Add Movie</button>
       </section>
     </section>
   </main>
-
-  <!-- Cursor follower -->
-  <div id="cursorFollower"></div> 
+  <div id="cursorFollower"></div>
 </body>
 </html>
-<!-- End of file: index.html -->
