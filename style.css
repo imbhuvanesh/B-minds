@@ -257,7 +257,7 @@ body {
     left: 0;
     width: 18px;
     height: 18px;
-    background-color: #000000;
+    background-color: #000000df;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -344,25 +344,25 @@ body {
 }
 
 /* Genre-based colors for movie containers */
-.movie-container.genre-action { background-color: #fca311; }
-.movie-container.genre-adventure { background-color: #e63946; }
-.movie-container.genre-animation { background-color: #a8dadc; }
+.movie-container.genre-action { background-color: #fca211cf; }
+.movie-container.genre-adventure { background-color: #e63947e2; }
+.movie-container.genre-animation { background-color: #a8dadcd5; }
 .movie-container.genre-comedy { background-color: #ffc800d6; }
-.movie-container.genre-crime { background-color: #1a759f; }
-.movie-container.genre-drama { background-color: #00b4d8; }
-.movie-container.genre-documentary { background-color: #457b9d; }
-.movie-container.genre-fantasy { background-color: #2a9d8f; }
-.movie-container.genre-historical { background-color: #7b43a9; }
-.movie-container.genre-horror { background-color: #9d0208; }
-.movie-container.genre-musical { background-color: #ff99c8; }
-.movie-container.genre-mystery { background-color: #6a0572; }
-.movie-container.genre-romance { background-color: #e5989b; }
-.movie-container.genre-science-fiction { background-color: #64748b; }
-.movie-container.genre-sports { background-color: #55a630; }
-.movie-container.genre-thriller { background-color: #4b0082; }
-.movie-container.genre-war { background-color: #8b0000; }
-.movie-container.genre-western { background-color: #c98c42; }
-.movie-container.genre-experimental { background-color: #0d1b2a; color: #fff; }
+.movie-container.genre-crime { background-color: #1a759fd1; }
+.movie-container.genre-drama { background-color: #00b4d8c5; }
+.movie-container.genre-documentary { background-color: #457b9dd0; }
+.movie-container.genre-fantasy { background-color: #2a9d90d3; }
+.movie-container.genre-historical { background-color: #7b43a9c9; }
+.movie-container.genre-horror { background-color: #9d0207cd; }
+.movie-container.genre-musical { background-color: #ff99c9d2; }
+.movie-container.genre-mystery { background-color: #6b0572c6; }
+.movie-container.genre-romance { background-color: #e5989bc1; }
+.movie-container.genre-science-fiction { background-color: #64748bc7; }
+.movie-container.genre-sports { background-color: #55a630c9; }
+.movie-container.genre-thriller { background-color: #4c0082c5; }
+.movie-container.genre-war { background-color: #8b0000c8; }
+.movie-container.genre-western { background-color: #c98c42c7; }
+.movie-container.genre-experimental { background-color: #0d1b2aca; color: #fff; }
 
 /* Responsive */
 @media (max-width: 1024px) {
