@@ -47,109 +47,201 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeWriter();
 
-    // --- In-memory database simulation ---
-    const db = {
-        movies: [
-            {
-                id: 1,
-                title: "Inception",
-                description: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
-                genre: "science-fiction",
-                reviews: [{ review: "Mind-bending and fantastic!" }, { review: "A true masterpiece." }]
-            },
-            {
-                id: 2,
-                title: "The Shawshank Redemption",
-                description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-                genre: "drama",
-                reviews: [{ review: "A truly inspiring story." }]
-            },
-            {
-                id: 3,
-                title: "The Matrix",
-                description: "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-                genre: "action",
-                reviews: []
-            },
-            {
-                id: 4,
-                title: "Pulp Fiction",
-                description: "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-                genre: "crime",
-                reviews: []
-            },
-            {
-                id: 5,
-                title: "Spirited Away",
-                description: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
-                genre: "animation",
-                reviews: []
-            },
-            {
-                id: 6,
-                title: "Get Out",
-                description: "A young African-American man visits his white girlfriend's parents for the first time, and he's not prepared for what he's about to find.",
-                genre: "horror",
-                reviews: []
-            },
-            {
-                id: 7,
-                title: "La La Land",
-                description: "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
-                genre: "musical",
-                reviews: []
-            },
-            {
-                id: 8,
-                title: "Forrest Gump",
-                description: "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
-                genre: "historical",
-                reviews: []
-            },
-            {
-                id: 9,
-                title: "Toy Story",
-                description: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as a kid's favorite toy.",
-                genre: "comedy",
-                reviews: []
-            },
-            {
-                id: 10,
-                title: "Mad Max: Fury Road",
-                description: "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
-                genre: "adventure",
-                reviews: []
-            },
-            {
-                id: 11,
-                title: "The King's Speech",
-                description: "The story of King George VI of the United Kingdom and his speech therapist, as he attempts to overcome his stammer.",
-                genre: "historical",
-                reviews: []
-            },
-            {
-                id: 12,
-                title: "The Lord of the Rings: The Fellowship of the Ring",
-                description: "A young hobbit, Frodo Baggins, is tasked with taking the One Ring to Mordor to destroy it and defeat the Dark Lord Sauron.",
-                genre: "fantasy",
-                reviews: []
-            },
-            {
-                id: 13,
-                title: "Eternal Sunshine of the Spotless Mind",
-                description: "A couple undergoes a procedure to erase each other from their memories after their relationship sours.",
-                genre: "romance",
-                reviews: []
-            },
-            {
-                id: 14,
-                title: "The Exorcist",
-                description: "A mother seeks the help of two priests to save her daughter from demonic possession.",
-                genre: "horror",
-                reviews: []
-            }
-        ]
-    };
+// --- In-memory database simulation with reviews ---
+const db = {
+    movies: [
+        {
+            id: 1,
+            title: "Mad Max: Fury Road",
+            description: "A high-octane, post-apocalyptic chase film packed with stunning visuals and relentless action.",
+            genre: "action",
+            reviews: [
+                { review: "Absolutely thrilling from start to finish!" },
+                { review: "Mad Max is pure adrenaline, a visual masterpiece." }
+            ]
+        },
+        {
+            id: 2,
+            title: "Life of Pi",
+            description: "A breathtaking survival journey across the ocean with a boy and a tiger.",
+            genre: "adventure",
+            reviews: [
+                { review: "A visually stunning and emotional journey." },
+                { review: "Pi's story is both inspiring and mesmerizing." }
+            ]
+        },
+        {
+            id: 3,
+            title: "Ratatouille",
+            description: "A heartwarming tale of a rat who dreams of becoming a chef in Paris.",
+            genre: "animation",
+            reviews: [
+                { review: "Such a delightful and inspiring story!" },
+                { review: "Pixar at its finest, fun for all ages." }
+            ]
+        },
+        {
+            id: 4,
+            title: "Home Alone",
+            description: "A kid hilariously outsmarts two burglars with clever traps during Christmas.",
+            genre: "comedy",
+            reviews: [
+                { review: "Classic holiday comedy, still funny!" },
+                { review: "Kevin McCallister is legendary!" }
+            ]
+        },
+        {
+            id: 5,
+            title: "Pulp Fiction",
+            description: "A stylish web of intersecting crime stories, full of dark humor and unforgettable dialogue.",
+            genre: "crime",
+            reviews: [
+                { review: "Tarantino's best, unforgettable scenes." },
+                { review: "Iconic dialogue and storytelling." }
+            ]
+        },
+        {
+            id: 6,
+            title: "The Shawshank Redemption",
+            description: "A powerful tale of hope, resilience, and friendship inside a prison.",
+            genre: "drama",
+            reviews: [
+                { review: "A masterpiece of storytelling." },
+                { review: "Hope and friendship at its finest." }
+            ]
+        },
+        {
+            id: 7,
+            title: "Oppenheimer",
+            description: "The gripping story of J. Robert Oppenheimer and the creation of the atomic bomb.",
+            genre: "documentary",
+            reviews: [
+                { review: "Intense and informative." },
+                { review: "Brilliantly captures history's complexity." }
+            ]
+        },
+        {
+            id: 8,
+            title: "Harry Potter and the Sorcerer’s Stone",
+            description: "The enchanting start of Harry’s magical journey at Hogwarts.",
+            genre: "fantasy",
+            reviews: [
+                { review: "Magical and heartwarming, perfect for all ages." },
+                { review: "The start of a legendary saga." }
+            ]
+        },
+        {
+            id: 9,
+            title: "Kingdom of Heaven",
+            description: "A blacksmith-turned-knight rises to defend Jerusalem during the Crusades.",
+            genre: "historical",
+            reviews: [
+                { review: "Epic battles and a compelling story." },
+                { review: "A visual feast of history and heroism." }
+            ]
+        },
+        {
+            id: 10,
+            title: "Insidious",
+            description: "A chilling tale of a family haunted by dark spirits from another realm.",
+            genre: "horror",
+            reviews: [
+                { review: "Terrifying and suspenseful, kept me on edge!" },
+                { review: "Great scares and a creepy atmosphere." }
+            ]
+        },
+        {
+            id: 11,
+            title: "La La Land",
+            description: "A bittersweet love story of a jazz musician and an aspiring actress chasing their dreams in Los Angeles.",
+            genre: "musical",
+            reviews: [
+                { review: "Beautiful music and stunning visuals." },
+                { review: "A modern musical masterpiece." }
+            ]
+        },
+        {
+            id: 12,
+            title: "Shutter Island",
+            description: "A U.S. Marshal investigates a missing patient at a mental institution, uncovering shocking twists.",
+            genre: "mystery",
+            reviews: [
+                { review: "Twists and turns kept me guessing." },
+                { review: "A psychological thriller done perfectly." }
+            ]
+        },
+        {
+            id: 13,
+            title: "Titanic",
+            description: "A tragic love story blossoms aboard the ill-fated RMS Titanic, blending passion, courage, and heartbreak.",
+            genre: "romance",
+            reviews: [
+                { review: "Heartbreaking yet beautiful love story." },
+                { review: "Timeless romance with epic visuals." }
+            ]
+        },
+        {
+            id: 14,
+            title: "Blade Runner",
+            description: "A visually stunning dystopian tale exploring humanity, identity, and artificial life in a futuristic world.",
+            genre: "science-fiction",
+            reviews: [
+                { review: "A sci-fi classic with deep philosophical questions." },
+                { review: "Visually mesmerizing and thought-provoking." }
+            ]
+        },
+        {
+            id: 15,
+            title: "F1: Drive to Survive",
+            description: "A thrilling documentary series capturing the intense world of Formula 1 racing, rivalries, and high-speed drama.",
+            genre: "sports",
+            reviews: [
+                { review: "Addictive and exciting, even for non-F1 fans!" },
+                { review: "Perfect mix of drama and racing." }
+            ]
+        },
+        {
+            id: 16,
+            title: "Fight Club",
+            description: "A dark and gripping tale of identity, rebellion, and the chaos lurking beneath modern life.",
+            genre: "thriller",
+            reviews: [
+                { review: "Mind-bending and unforgettable." },
+                { review: "A cult classic that stays with you." }
+            ]
+        },
+        {
+            id: 17,
+            title: "Dunkirk",
+            description: "A tense and immersive depiction of the evacuation of Allied soldiers from Dunkirk during World War II.",
+            genre: "war",
+            reviews: [
+                { review: "Edge-of-your-seat intensity!" },
+                { review: "Masterful storytelling and visuals." }
+            ]
+        },
+        {
+            id: 18,
+            title: "A Fistful of Dollars",
+            description: "A lone gunslinger manipulates two rival families in a small town to his advantage in this iconic spaghetti western.",
+            genre: "western",
+            reviews: [
+                { review: "Classic western, Clint Eastwood at his best." },
+                { review: "Gripping story and memorable style." }
+            ]
+        },
+        {
+            id: 19,
+            title: "Tree of Life",
+            description: "A poetic meditation on life, existence, and the universe, blending memory, nature, and spirituality.",
+            genre: "experimental",
+            reviews: [
+                { review: "Visually stunning and deeply philosophical." },
+                { review: "A unique cinematic experience." }
+            ]
+        }
+    ]
+};
 
     const getMoviesFromDb = () => db.movies;
 
